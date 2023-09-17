@@ -4,7 +4,7 @@ import entity.Employee;
 
 public interface IEmployeeDao {
     void addEmp(Employee employee);
-    Employee findById(int id);
+    Employee findById(long id);
     void updateSalary(Employee employee);
     void deleteEmp(Employee employee);
     Employee[] findAll();
