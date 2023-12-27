@@ -1,4 +1,4 @@
-package code.recursion.basicQuestions.String;
+package code.recursion.basicQuestions.Strings;
 
 public class Stream {
     public static void main(String[] args) {

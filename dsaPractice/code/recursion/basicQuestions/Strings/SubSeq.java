@@ -1,4 +1,4 @@
-package code.recursion.basicQuestions.String;
+package code.recursion.basicQuestions.Strings;
 
 import java.util.ArrayList;
 
