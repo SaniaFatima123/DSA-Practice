@@ -7,6 +7,8 @@ public class NKnight {
         knights(board, 0, 0, 4);
 
     }
+    //could be solved in a similar manner as NQueen but here we are increasing the arguments and trying to skip for loop
+    //code might become lengthy
     //knights is the number of knights I want to place
     static void knights(boolean[][] board, int row, int col, int knights){
         if (knights == 0){
