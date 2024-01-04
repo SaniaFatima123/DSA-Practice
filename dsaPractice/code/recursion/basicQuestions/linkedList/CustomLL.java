@@ -118,6 +118,62 @@ public class CustomLL {
         }
 
     }
+    //inserting using recursion
+    public void insertRec(int val, int index){
+        head = insertRec(val, index, head);
+    }
+    public Node insertRec(int val, int index, Node node){
+        if(index == 0){
+           Node temp = new Node(val,node);
+           size++;
+           return temp;
+        }
+        node.next = insertRec(val, index-1, node.next);
+        return node;
+    }
+
+    // https://leetcode.com/problems/remove-duplicates-from-sorted-list
+    public void duplicates(){
+        Node node = head;
+
+        while (node.next!=null){
+            if(node.value == node.next.value){
+                      node.next = node.next.next;
+                      size--;
+            }
+            else {
+                node = node.next;
+            }
+        }
+        tail = node;
+        tail.next = null;
+    }
+    public static  CustomLL merge(CustomLL first, CustomLL second){
+        Node f = first.head;
+        Node s = second.head;
+
+        CustomLL ans = new CustomLL();
+
+        while (f!=null && s!=null){
+            if(f.value<s.value) {
+                ans.insertLast(f.value);
+                f = f.next;
+            }
+                else{
+                    ans.insertLast(s.value);
+                    s = s.next;
+                }
+        }
+        if(f!=null){
+            ans.insertLast(f.value);
+            f = f.next;
+        }
+        if(s!=null){
+            ans.insertLast(s.value);
+            s =s.next;
+        }
+        return ans;
+    }
     public void display()
     {
         Node temp = head;
@@ -127,5 +183,47 @@ public class CustomLL {
         }
         System.out.print("END");
         System.out.println();
+    }
+
+    public static void main(String[] args) {
+        CustomLL ll = new CustomLL();
+//        ll.insertLast(1);
+//        ll.insertLast(3);
+//        ll.insertLast(8);
+//        ll.insertLast(9);
+//        ll.insertLast(13);
+//        ll.insertLast(32);
+//        ll.display();
+//        System.out.println("Inserting using recursion ********");
+//        ll.insertRec(15,3);
+//        ll.display();
+
+//        ll.insertLast(1);
+//        ll.insertLast(1);
+//        ll.insertLast(1);
+//        ll.insertLast(2);
+//        ll.insertLast(3);
+//        ll.insertLast(3);
+//        ll.display();
+//        System.out.println("removing duplicates ********");
+//        ll.duplicates();
+//        ll.display();
+
+//        System.out.println("Merging 2 linkedList ********");
+//        CustomLL l1 = new CustomLL();
+//        l1.insertLast(1);
+//        l1.insertLast(3);
+//        l1.insertLast(5);
+//
+//        CustomLL l2 = new CustomLL();
+//        l2.insertLast(1);
+//        l2.insertLast(4);
+//        l2.insertLast(9);
+//        l2.insertLast(14);
+//
+//        CustomLL ans  = merge(l1, l2);
+//        ans.display();
+
+
     }
 }
