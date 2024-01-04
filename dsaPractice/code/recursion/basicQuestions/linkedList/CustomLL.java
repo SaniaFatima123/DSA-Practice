@@ -10,7 +10,7 @@ public class CustomLL {
     public CustomLL() {
         this.size = 0;
     }
-
+    //Insert value at first
     public void insertFirst(int val){
         Node node = new Node(val);
         node.next = head;
@@ -21,7 +21,7 @@ public class CustomLL {
          size+=1;
 
     }
-
+    //Insert value at last
    public void insertLast(int val){
         if(size==0){
             insertFirst(val);
@@ -32,6 +32,7 @@ public class CustomLL {
         tail = node;
         size++;
    }
+    //Insert value at a given index
    public void insert(int val, int index){
         if(index == 0){
             insertFirst(val);
@@ -49,6 +50,7 @@ public class CustomLL {
        temp.next = node;
        size++;
    }
+    //find node with given index
    public Node get(int index){
         Node node= head;
        for (int i = 0; i < index; i++) {
@@ -56,12 +58,25 @@ public class CustomLL {
        }
        return node;
    }
+   //find node with given value
+    public Node find(int value) {
+        Node node = head;
+        while (node != null) {
+            if (node.value == value) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+    //Delete value
    public int deleteFirst(){
         int val = head.value;
         head = head.next;
         size--;
         return val;
    }
+   //Delete at last
    public int deleteLast(){
 
         if(size<=1){
@@ -74,6 +89,7 @@ public class CustomLL {
         size--;
         return val;
    }
+   //Delete from index
    public int delete(int index){
         if(index == 0){
             return deleteFirst();
