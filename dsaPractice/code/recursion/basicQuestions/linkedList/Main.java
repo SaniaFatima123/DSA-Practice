@@ -29,12 +29,21 @@ public class Main {
 //        ll.delete(2);
 //        ll.display();
 
-        CustomDLL DLL = new CustomDLL();
-        DLL.insertFirst(12);
-        DLL.insertFirst(8);
-        DLL.insertFirst(10);
-        DLL.insertFirst(4);
-        DLL.insertFirst(2);
-        DLL.display();
+//        CustomDLL DLL = new CustomDLL();
+//        DLL.insertFirst(12);
+//        DLL.insertFirst(8);
+//        DLL.insertFirst(10);
+//        DLL.insertFirst(4);
+//        DLL.insertFirst(2);
+//        DLL.display();
+
+        CustomCLL CLL = new CustomCLL();
+        CLL.insert(12);
+        CLL.insert(46);
+        CLL.insert(15);
+        CLL.insert(5);
+        CLL.display();
+        CLL.delete(15);
+        CLL.display();
     }
 }
