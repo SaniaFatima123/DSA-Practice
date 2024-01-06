@@ -186,7 +186,7 @@ public class CustomLL {
     }
 
     public static void main(String[] args) {
-        CustomLL ll = new CustomLL();
+//        CustomLL ll = new CustomLL();
 //        ll.insertLast(1);
 //        ll.insertLast(3);
 //        ll.insertLast(8);
@@ -198,6 +198,7 @@ public class CustomLL {
 //        ll.insertRec(15,3);
 //        ll.display();
 
+//        CustomLL ll = new CustomLL();
 //        ll.insertLast(1);
 //        ll.insertLast(1);
 //        ll.insertLast(1);
