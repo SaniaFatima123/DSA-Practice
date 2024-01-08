@@ -207,6 +207,39 @@ public class CustomLL {
             bubbleSort(row - 1, 0);
         }
     }
+    //reversing a LL using recursion
+    public void reverseRec(Node node){
+        if(node==tail){
+            head = tail;
+            return;
+        }
+        reverseRec(node.next);
+        tail.next = node;
+        tail = node;
+        node.next = null;
+    }
+    //reversing a LL using iterative
+    // in place reversal of linked list
+    // google, microsoft, apple, amazon: https://leetcode.com/problems/reverse-linked-list/
+    public void reverse(Node node){
+        Node prev = null;
+        Node pres = head;
+        Node next = pres.next;
+        if(size<2){
+            return;
+        }
+        while(pres!=null){
+            pres.next = prev;
+            prev = pres;
+            pres = next;
+            if(next.next!=null) {
+                next = next.next;
+            }
+        }
+        head = prev;
+    }
+
+
     public void display()
     {
         Node temp = head;
@@ -257,7 +290,6 @@ public class CustomLL {
 //
 //        CustomLL ans  = merge(l1, l2);
 //        ans.display();
-
 
     }
 }
