@@ -6,6 +6,7 @@ public class ComparablePractice implements Comparable<ComparablePractice> {
 
     private int age;
     private String name;
+    private double Salary;
 
     public ComparablePractice(int age, String name, double salary) {
         this.age = age;
@@ -13,14 +14,20 @@ public class ComparablePractice implements Comparable<ComparablePractice> {
         Salary = salary;
     }
 
-    private double Salary;
 
 
 
+    //comparing age
     @Override
-    public int compareTo(ComparablePractice comp){
-       return this.age-comp.age;
+    public int compareTo(ComparablePractice comp) {
+        return this.age - comp.age;
     }
+//
+//    //comparing name
+//    @Override
+//    public int compareTo(ComparablePractice comp){
+//        return this.name.compareTo(comp.name);
+//    }
 
     public int getAge() {
         return age;
@@ -48,8 +55,8 @@ public class ComparablePractice implements Comparable<ComparablePractice> {
 
     public static void main(String[] args) {
         List<ComparablePractice> list = new ArrayList<ComparablePractice>();
-        ComparablePractice obj1 = new ComparablePractice(22,"Soha",33581.56);
-        ComparablePractice obj2 = new ComparablePractice(45,"Seema",85581.56);
+        ComparablePractice obj1 = new ComparablePractice(22,"Roha",33581.56);
+        ComparablePractice obj2 = new ComparablePractice(45,"Fina",85581.56);
         ComparablePractice obj3 = new ComparablePractice(36,"Sanjay",544581.56);
 
         list.add(obj1);
