@@ -89,9 +89,25 @@ public class InterviewQuestions {
         return slow;
     }
 
-    // https://leetcode.com/problems/reverse-linked-list-ii/
-    public ListNode reverseBetween(ListNode head, int left, int right) {
+    // https://leetcode.com/problems/reverse-linked-list/submissions/
+    // google, apple, amazon, microsoft
+    public ListNode reverseList(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        ListNode prev = null;
+        ListNode present = head;
+        ListNode next = present.next;
 
+        while (present != null) {
+            present.next = prev;
+            prev = present;
+            present = next;
+            if (next != null) {
+                next = next.next;
+            }
+        }
+        return prev;
     }
 
     // Google, Microsoft, Facebook: https://leetcode.com/problems/reverse-linked-list-ii/
@@ -132,6 +148,54 @@ public class InterviewQuestions {
         return head;
     }
 
+    // linkedin, google, facebook, microsoft, amazon, apple
+    //    https://leetcode.com/problems/palindrome-linked-list/
+    public boolean isPalindrome(ListNode head) {
+        ListNode mid = middleNode(head);
+        ListNode headSecond = reverseList(mid);
+        ListNode rereverseHead = headSecond;
+        // compare both the halves
+        while(head!=null && headSecond!=null){
+            if(head.val!=headSecond.val){
+                break;
+            }
+            head = head.next;
+            headSecond = headSecond.next;
+        }
+        reverseList(rereverseHead);
+
+        if(head==null || headSecond==null){
+            return true;
+        }
+        return false;
+    }
+    // https://leetcode.com/problems/reorder-list/
+    // google, facebook
+    public void reorderList(ListNode head) {
+        if (head == null || head.next == null) {
+            return;
+        }
+        ListNode mid = middleNode(head);
+        ListNode headSecond = reverseList(mid);
+        ListNode headFirst = head;
+
+        //rearrange
+        while(headFirst!=null && headSecond!=null){
+            //for 1st half
+            ListNode temp = headFirst.next;
+            headFirst.next = headSecond;
+            headFirst = temp;
+
+            //for second half(reversed list)
+            temp = headSecond.next;
+            headSecond.next = headFirst;
+            headSecond = temp;
+        }
+        // next of tail to null
+        if (headFirst != null) {
+            headFirst.next = null;
+        }
+    }
 
     class ListNode {
         int val;
