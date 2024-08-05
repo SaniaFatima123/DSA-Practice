@@ -4,7 +4,7 @@ public class Question1 {
     // search an element in a rotated sorted array
 
     public int searchTarget(int[] arr, int target){
-        int answer = 0, left = 0, right = arr.length-1;
+        int left = 0, right = arr.length-1;
         int mid = 0;
         while(left<=right) {
              mid = left + (right - left) / 2;
