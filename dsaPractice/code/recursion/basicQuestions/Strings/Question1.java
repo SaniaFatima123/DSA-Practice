@@ -25,5 +25,7 @@ public class Question1 {
         Question1 obj = new Question1();
         System.out.println(obj.lengthOfLongestSubstring(str));
 
+
+
     }
 }
